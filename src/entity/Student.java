@@ -4,35 +4,30 @@ package entity;
 
 public class Student
 {
-    String lname = "";
-    String fname = "";
-    String mname = "";
+    String fullname = "";
     String address = "";
     String bday = "";
     String pname = "";
     String status = "";
+    String course = "";
     String ylevel = "";
     int age;
 
-    public Student (String lname, String fname, String mname)
-    {
-        this.lname = lname;
-        this.fname = fname;
-        this.mname = mname;
-    }
 
-    public Student ( String bday, int age, String address, String pname)
+   public Student ( String fullname, String bday, int age, String address, String pname)
     {
+        this.fullname = fullname;
         this.bday = bday;
         this.age = age;
         this.address = address;
         this.pname = pname;
     }
 
-    public Student (String ylevel, String status)
+    public Student (String ylevel, String status,String course)
     {
         this.ylevel = ylevel;
         this.status = status;
+        this.course = course;
     }
 
     public Student ()
@@ -59,32 +54,24 @@ public class Student
         return bday;
     }
 
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
     public void setBday(String bday) {
         this.bday = bday;
-    }
-
-    public String getFname() {
-        return fname;
-    }
-
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-
-    public String getLname() {
-        return lname;
-    }
-
-    public void setLname(String lname) {
-        this.lname = lname;
-    }
-
-    public String getMname() {
-        return mname;
-    }
-
-    public void setMname(String mname) {
-        this.mname = mname;
     }
 
     public String getPname() {

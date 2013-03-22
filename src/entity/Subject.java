@@ -7,14 +7,12 @@ public class Subject
     String subjCode = "";
     String name = "";
     String sched = "";
-    int slot;
 
-    public Subject ( String subjCode, String name, String sched, int slot)
+    public Subject ( String subjCode, String name, String sched)
     {
         this.subjCode = subjCode;
         this.name = name;
         this.sched = sched;
-        this.slot = slot;
     }
 
     public Subject()
@@ -35,14 +33,6 @@ public class Subject
 
     public void setSched(String sched) {
         this.sched = sched;
-    }
-
-    public int getSlot() {
-        return slot;
-    }
-
-    public void setSlot(int slot) {
-        this.slot = slot;
     }
 
     public String getSubjCode() {

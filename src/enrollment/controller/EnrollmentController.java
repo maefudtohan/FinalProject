@@ -31,8 +31,7 @@ public class EnrollmentController
         model.getStudent().setYlevel(view.getTxt_ylevel().getText());
 
         model.getStudenroll().add(model.getStudent());
-        model.setStudent(new Student());
-        System.out.println("hhhhhh");
+        model.setStudent(new Student()); 
         rebind();
 
         view.getTxt_fullName().setText("");
@@ -103,10 +102,53 @@ public class EnrollmentController
 
     public void edit()
     {
+        String edit = "";
+        String name = "";
+        String address = "";
+        String bday = "";
+        String parents = "";
+        String status = "";
+        String yrlvl = "";
+        String course = "";
+        String h = "";
+        int h1,a;
+
+        edit = JOptionPane.showInputDialog("Select No.");
+        a = Integer.parseInt(edit);
+        name = JOptionPane.showInputDialog("Enter New Name:");
+        address = JOptionPane.showInputDialog("Enter New Address:");
+        bday = JOptionPane.showInputDialog("Enter New Birthday:");
+        parents = JOptionPane.showInputDialog("Enter New Parents:");
+        status = JOptionPane.showInputDialog("Enter New Status:");
+        yrlvl = JOptionPane.showInputDialog("Enter New Yr. Level:");
+        course = JOptionPane.showInputDialog("Enter New Course:");
+        h = JOptionPane.showInputDialog("Enter New Age");
+        h1 = Integer.parseInt(h);
+
+        Student update = new Student(name, address, bday, h1, parents, status, yrlvl, course);
+        model.getStudenroll().set(a-1, update);
+        rebind();
     }
 
-    public void save()
+    public void edit1()
     {
+        String sname = "";
+        String code = "";
+        String sched = "";
+        String edit1 = "";
+        int b;
+
+        edit1 = JOptionPane.showInputDialog("Enter No.");
+        b = Integer.parseInt(edit1);
+
+        sname = JOptionPane.showInputDialog("Enter New Subject:");
+        code = JOptionPane.showInputDialog("Enter New Subject Code:");
+        sched = JOptionPane.showInputDialog("Enter New Schedule:");
+        
+
+        Subject update = new Subject(code, sname, sched);
+        model.getSubenroll().set(b-1, update);
+        rebind1();
     }
 }
 

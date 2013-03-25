@@ -13,6 +13,18 @@ public class Student
     String ylevel = "";
     int age;
 
+    public Student (String fullname, String address, String bday, int age, String pname, String status, String ylevel, String course){
+        this.fullname = fullname;
+        this.address = address;
+        this.age = age;
+        this.bday = bday;
+        this.course = course;
+        this.pname = pname;
+        this.status = status;
+        this.ylevel = ylevel;
+
+    }
+
 
    public Student ( String fullname, String bday, int age, String address, String pname)
     {

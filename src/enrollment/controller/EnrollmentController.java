@@ -23,7 +23,7 @@ public class EnrollmentController
     {
         model.getStudent().setFullname(view.getTxt_fullName().getText());
         model.getStudent().setAddress(view.getTxt_address().getText());
-        model.getStudent().setAge(view.getTxt_age().getX());
+        model.getStudent().setAge(Integer.parseInt(view.getTxt_age().getText()));
         model.getStudent().setBday(view.getTxt_bday().getText());
         model.getStudent().setPname(view.getTxt_pName().getText());
         model.getStudent().setStatus(view.getTxt_status().getText());

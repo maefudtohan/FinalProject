@@ -13,6 +13,7 @@ package enrollment.view;
 
 import enrollment.controller.EnrollmentController;
 import enrollment.model.EnrollmentModel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import org.jdesktop.beansbinding.BindingGroup;
 
@@ -540,4 +541,9 @@ public class EnrollmentView extends javax.swing.JFrame {
     public BindingGroup getBindingGroup() {
         return bindingGroup;
     }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
 }

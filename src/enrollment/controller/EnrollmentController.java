@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class EnrollmentController
 {
-    private EnrollmentView view;
+     private EnrollmentView view;
     private EnrollmentModel model;
 
     public EnrollmentController (EnrollmentView view, EnrollmentModel model)
@@ -31,7 +31,7 @@ public class EnrollmentController
         model.getStudent().setYlevel(view.getTxt_ylevel().getText());
 
         model.getStudenroll().add(model.getStudent());
-        model.setStudent(new Student()); 
+        model.setStudent(new Student());
         rebind();
 
         view.getTxt_fullName().setText("");
@@ -67,7 +67,7 @@ public class EnrollmentController
     {
         view.getBindingGroup().getBinding("subject").unbind();
         view.getBindingGroup().getBinding("subject").bind();
-        
+
     }
 
     private void rebind()
@@ -81,10 +81,11 @@ public class EnrollmentController
         int i = 0;
        String val = "";
        ArrayList <Student> studenroll = model.getStudenroll();
-            val = JOptionPane.showInputDialog( "Enter no.");
-            i = Integer.parseInt(val);
-            Student student = (Student)studenroll.get(i-1);
-            studenroll.remove(i-1);
+            //val = JOptionPane.showInputDialog( "Enter no.");
+            //i = Integer.parseInt(val);
+            i = view.getjTable1().getSelectedRow();
+            Student student = (Student)studenroll.get(i);
+            studenroll.remove(i);
         rebind();
     }
 
@@ -93,8 +94,8 @@ public class EnrollmentController
        int i = 0;
        String val = "";
        ArrayList <Subject> subenroll = model.getSubenroll();
-            val = JOptionPane.showInputDialog( "Enter no.");
-            i = Integer.parseInt(val);
+            //val = JOptionPane.showInputDialog( "Enter no.");
+            i = view.getjTable1().getSelectedRow();
             Subject subject = (Subject)subenroll.get(i-1);
             subenroll.remove(i-1);
         rebind1();
@@ -144,7 +145,7 @@ public class EnrollmentController
         sname = JOptionPane.showInputDialog("Enter New Subject:");
         code = JOptionPane.showInputDialog("Enter New Subject Code:");
         sched = JOptionPane.showInputDialog("Enter New Schedule:");
-        
+
 
         Subject update = new Subject(code, sname, sched);
         model.getSubenroll().set(b-1, update);
